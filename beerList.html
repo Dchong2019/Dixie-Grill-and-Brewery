@@ -30,9 +30,9 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
-  <link rel="stylesheet" type="text/css" href="beers.css">  <!--===============================================================================================-->
+ <!--===============================================================================================-->
 </head>
-<body class="animsition">
+<body >
 
 	<!-- Header -->
 	<header>
@@ -59,6 +59,11 @@
 									<a href="menu.html">Menu</a>
 								</li>
 
+								
+								<li>
+									<a href="beerList.html">Beers</a>
+								</li>
+
 								<li>
 									<a href="news.html">News</a>
 								</li>
@@ -70,6 +75,8 @@
 								<li>
 									<a href="contact.html">Contact</a>
 								</li>
+
+								
 							</ul>
 						</nav>
 					</div>
@@ -101,6 +108,10 @@
 			</li>
 
 			<li class="t-center m-b-13">
+				<a href="beerList.html" class="txt19">Beers</a>
+			</li>
+
+			<li class="t-center m-b-13">
 				<a href="about.html" class="txt19">About</a>
 			</li>
 
@@ -108,9 +119,11 @@
 				<a href="news.html" class="txt19">News</a>
 			</li>
 
-			<li class="t-center m-b-33">
+			<li class="t-center m-b-13">
 				<a href="contact.html" class="txt19">Contact</a>
 			</li>
+
+		
 
 			<li class="t-center">
 				<!-- Button3 -->
@@ -171,93 +184,77 @@
 <body >
 
   <!-- Title Page -->
-	<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(images/Dixie_Background12.jpg);">
+	<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(images/Beers.jpg);">
 		<h2 class="tit6 t-center">
-			About Us
+			Beer List
 		</h2>
 	</section>
 
 
-  <button type="submit" id="getData" class="btn btn-primary">Search data</button>
-
-<div class="col-md-6" >
-<table class="table table-striped"   id='dataTbl'>
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">ABV</th>
-      <th scope="col">Company</th>
-      <th scope="col">Description</th>
-      <th scope="col">Category</th>
-    </tr>
-  </thead>
-  <tbody>
-  
-   
-  </tbody>
-</table>
-</div>
 
 
+	
+	<!-- Beers -->
+	<section class="section-chef bgwhite p-t-115 p-b-95">
+		<div class="container t-center">
+			<span class="tit2 t-center">
+			Join Us For
+			</span>
+
+			<h3 class="tit5 t-center m-b-50 m-t-5">
+				  Happy Hour!
+			</h3>
+
+			<div class="col-md-8 col-lg-4 m-l-r-auto p-b-30">
+				<!-- -Block5 -->
+				<div class="blo5 pos-relative p-t-60">
+					<div class="pic-blo5 size14 bo4 wrap-cir-pic hov-img-zoom ab-c-t">
+						<a href="#"><img src="images/Straight_Tail_Logo.png" alt="IGM-AVATAR"></a>
+					</div>
+
+					<div class="text-blo5 size34 t-center bo-rad-10 bo7 p-t-90 p-l-35 p-r-35 p-b-30">
+						<a href="#" class="txt34 dis-block p-b-6">
+							Happy Hour
+						</a>
+
+						<span class="dis-block t-center txt35 p-b-25">
+							Mon-Thu: 3-7 PM & 9-close.</br>
+							Fri: 3-7 PM.</br>
+							Sat-Sun: All Day!
+						</span>
+
+						<p class="t-center">
+							$3.00 Domestic bottles & well liquor cocktails, Half-off certain wines, and $1.00 off craft beers.
+							*Deals subject to change.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			
+	</section>
+
+	<section class="section-chef bgwhite p-t-115 p-b-95">
+		<div class="container t-center">
+			<span class="tit2 t-center">
+			 A Taste Of Our
+			</span>
+
+			<h3 class="tit5 t-center m-b-50 m-t-5">
+				  Craft Beers
+			</h3>
+
+			
+
+			
+	</section>
+
+<!--Beer List Div-->
+	<div id="menu-container"></div>
 
 
+	
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-  import { getDatabase, set, ref ,push, child, onValue} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
-
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyB3lyujRu2g_szT-r0GZF4T12MrzGZJHg8",
-    authDomain: "beer-database.firebaseapp.com",
-    databaseURL: "https://beer-database-default-rtdb.firebaseio.com",
-    projectId: "beer-database",
-    storageBucket: "beer-database.appspot.com",
-    messagingSenderId: "237719564948",
-    appId: "1:237719564948:web:a16916d042fd96c874ba81",
-    measurementId: "G-KHGHBKCJF7"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  
-  // Get a reference to the database service
-  const database = getDatabase(app);
-
-  // write data
-
-  // read data
-  getData.addEventListener('click',(e) => {
-
-    $('#dataTbl td').remove();
-    var rowNum = 0; 
-    const dbRef = ref(database, 'Beers/');
-
-    onValue(dbRef, (snapshot) => {
-      snapshot.forEach((childSnapshot) => {
-      const childKey = childSnapshot.key;
-      const childData = childSnapshot.val();
-      // ...
-      rowNum += 1; 
-      var row = "<tr><td>" + childData.name + "</td><td>" + childData.abv + "</td><td>" + childData.company + "</td><td>" + childData.description + "</td><td>" + childData.category + "</td></tr>"
-
-      $(row).appendTo('#dataTbl');
-      
-      });
-    }, {
-       onlyOnce: true
-    });
-
-
-  });
-</script>
 
 <!-- Footer -->
 <footer class="bg1">
@@ -288,7 +285,7 @@
 
 				<ul>
 					<li class="txt14">
-						011:30 AM – 11:00 PM
+						11:30 AM – 11:00 PM
 					</li>
 
 					<li class="txt14">
@@ -296,7 +293,7 @@
 					</li>
 
 					<li class="txt14">
-						011:30 AM – 12:00 AM
+						11:30 AM – 12:00 AM
 					</li>
 
 					<li class="txt14">
@@ -426,8 +423,68 @@
 		</span>
 	</div>
 
+<!--firebase database-->
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+  import { getDatabase, set, ref ,push, child, onValue} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyB3lyujRu2g_szT-r0GZF4T12MrzGZJHg8",
+    authDomain: "beer-database.firebaseapp.com",
+    databaseURL: "https://beer-database-default-rtdb.firebaseio.com",
+    projectId: "beer-database",
+    storageBucket: "beer-database.appspot.com",
+    messagingSenderId: "237719564948",
+    appId: "1:237719564948:web:a16916d042fd96c874ba81",
+    measurementId: "G-KHGHBKCJF7"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  
+  // Get a reference to the database service
+  const database = getDatabase(app);
+
+  // write data
+
+  // read data
+  getData.addEventListener('click',(e) => {
+
+    $('#dataTbl td').remove();
+    var rowNum = 0; 
+    const dbRef = ref(database, 'Beers/');
+
+    onValue(dbRef, (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+      const childKey = childSnapshot.key;
+      const childData = childSnapshot.val();
+      // ...
+      rowNum += 1; 
+      var row = "<tr><td>" + childData.name + "</td><td>" + childData.abv + "</td><td>" + childData.company + "</td><td>" + childData.description + "</td><td>" + childData.category + "</td></tr>"
+
+      $(row).appendTo('#dataTbl');
+      
+      });
+    }, {
+       onlyOnce: true
+    });
 
 
+  });
+</script>
+<!--Beer list function-->
+<script type="text/javascript">
+	!function getScript(e,t){var a=document.createElement("script"),n=document.getElementsByTagName("script")[0];a.async=1,n.parentNode.insertBefore(a,n),a.onload=a.onreadystatechange=function(e,n){(n||!a.readyState||/loaded|complete/.test(a.readyState))&&(a.onload=a.onreadystatechange=null,a=undefined,n||t&&t())},a.src=e}("https://embed-menu-preloader.untappdapi.com/embed-menu-preloader.min.js",function(){PreloadEmbedMenu("menu-container",10410,37762)});
+  </script>
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -456,6 +513,7 @@
 	<script type="text/javascript" src="vendor/isotope/isotope.pkgd.min.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	
 
 
 </body>
