@@ -551,7 +551,7 @@
 .p-b-92 {padding-bottom: 92px;}
 .p-b-93 {padding-bottom: 93px;}
 .p-b-94 {padding-bottom: 94px;}
-.p-b-95 {padding-bottom: 95px;}
+.p-b-95 {padding-bottom: 0px;}
 .p-b-96 {padding-bottom: 96px;}
 .p-b-97 {padding-bottom: 97px;}
 .p-b-98 {padding-bottom: 98px;}
@@ -3695,17 +3695,17 @@ EFFECT   EFFECT   EFFECT   EFFECT   EFFECT   EFFECT  EFFECT
 -----------------------------------------------------------
 */
 .bg1-pattern {
-	background-image: url(../images/icons/pattern1.png);
+	background-image: url();
   	background-repeat: repeat;
 }
 
 .bg2-pattern {
-	background-image: url(../images/icons/pattern2.png);
+	background-image: url();
   	background-repeat: repeat;
 }
 
 .bg3-pattern {
-	background-image: url(../images/icons/pattern3.png);
+	background-image: url();
   	background-repeat: repeat;
 }
 
